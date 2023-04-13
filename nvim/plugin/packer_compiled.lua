@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/balint/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
+  ["bclose.vim"] = {
+    loaded = true,
+    path = "/home/balint/.local/share/nvim/site/pack/packer/start/bclose.vim",
+    url = "https://github.com/rbgrouleff/bclose.vim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/balint/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -188,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/balint/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["ranger.vim"] = {
+    loaded = true,
+    path = "/home/balint/.local/share/nvim/site/pack/packer/start/ranger.vim",
+    url = "https://github.com/francoiscabrol/ranger.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
