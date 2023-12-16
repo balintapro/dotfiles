@@ -62,6 +62,7 @@ editor_group_undo=false
 editor_state_full_filename=false
 editor_ask_filename_before_edit=false
 nice_rotating_dash=true
+shadows=true
 mcview_remember_file_position=false
 auto_fill_mkdir_name=true
 copymove_persistent_attr=true
@@ -82,15 +83,11 @@ editor_backup_extension=~
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
-skin=yadt256-defbg
-
-shadows=true
-
-filepos_max_saved_entries=1024
+skin=modarcon16-defbg
 
 [Layout]
 output_lines=0
-left_panel_size=71
+left_panel_size=93
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -113,14 +110,11 @@ autodetect_codeset=
 clipboard_store=
 clipboard_paste=
 
-spell_language=en
-
 [Colors]
 base_color=
 xterm-256color=
 color_terminals=
-
-alacritty=
+screen-256color=
 
 [Panels]
 show_mini_info=true
@@ -128,25 +122,23 @@ kilobyte_si=false
 mix_all_files=false
 show_backups=true
 show_dot_files=true
-fast_reload=true
-fast_reload_msg_shown=true
+fast_reload=false
+fast_reload_msg_shown=false
 mark_moves_down=true
 reverse_files_only=true
 auto_save_setup_panels=false
 navigate_with_arrows=false
 panel_scroll_pages=true
-panel_scroll_center=true
-mouse_move_pages=false
+panel_scroll_center=false
+mouse_move_pages=true
 filetype_mode=true
 permission_mode=false
 torben_fj_mode=false
 quick_search_mode=2
 select_flags=6
 
-simple_swap=false
-
 [Panelize]
-Find *.orig after patching=find . -name \\*.orig -print
-Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
-Find rejects after patching=find . -name \\*.rej -print
 Modified git files=git ls-files --modified
+Find rejects after patching=find . -name \\*.rej -print
+Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Find *.orig after patching=find . -name \\*.orig -print
