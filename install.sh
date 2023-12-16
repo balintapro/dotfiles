@@ -107,8 +107,7 @@ overwriteConfigFiles () {
     echo -e "--- --- ---"
 }
 
-# OPTION WRAPPER FUNCTIONS
-
+# OPTION WRAPPER DECOR FUNCTIONS
 fullInstall () {
     echo -e "Dotfile installation started\n$NOW\n"
     echo -e "--- --- ---"
@@ -116,7 +115,7 @@ fullInstall () {
     deleteFolders
     copyFolders
     overwriteConfigFiles
-    echo -e "\nDotfile installation complete\n$NOW\nFind your backup in $BAK_DIR"
+    echo -e "\nDotfile installation COMPLETE\n$NOW\nFind your backup in $BAK_DIR"
 }
 
 fullInstallTest () {
@@ -127,7 +126,7 @@ fullInstallTest () {
     deleteFolders $1
     copyFolders $1
     overwriteConfigFiles $1
-    echo -e "\nDotfile installation complete\n$NOW\nFind your backup in $BAK_DIR"
+    echo -e "\nDotfile installation COMPLETE\n$NOW\nFind your backup in $BAK_DIR"
     echo -e "\nDUMMY SAVE TO REPO\n$NOW\n"
     saveToRepo $1
     echo -e "END TEST RUN"
@@ -137,44 +136,58 @@ onlyBackup () {
     echo -e "Backup started\n$NOW\n"
     echo -e "--- --- ---"
     createBackup
-    echo -e "\nBackup complete\n$NOW\nFind your backup in $BAK_DIR"
+    echo -e "\nBackup COMPLETE\n$NOW\nFind your backup in $BAK_DIR"
 }
 
 saveToRepoOption () {
     echo -e "Save to repo started\n$NOW\n"
     echo -e "--- --- ---"
     saveToRepo
-    echo -e "\nSave to repo complete\n$NOW\nFind your backup in $REPO_DIR"
+    echo -e "\nSave to repo COMPLETE\n$NOW\nYour files in $REPO_DIR are now updated."
 }
 
-echo -e "Do you wish to install or backup the dots?\n
-Note: only files and folders listed in the repo will be backed up!"
-select yn in "List" "Test" "Backup" "Install" "Save" "Exit"; do
-    case $yn in
-        List ) 
-            echo -e "\n"
-            echo -e "Folders: \t ${REPO_CONFIG_FOLDERS[@]}"
-            echo -e "dots: \t ${REPO_DOT_FILES[@]}"
-            break;;
-        Test )
+
+while true; do
+echo -e "configs: \t ${REPO_CONFIG_FOLDERS[@]}
+dots: \t\t ${REPO_DOT_FILES[@]}
+Note: only files and folders listed in the repo will be backed up!\n"
+
+echo -e "Select an option from below:
+    1 Test:\t Test backup, install, save functionalities. Nothing will be changed.
+    2 Backup:\t All matching user dots and configs backed up to $HOME/bak-dot.
+    3 Install:\t Install dots and configs to your home directory.
+    4 Save:\t Copy all matching user dots and configs to the repo.
+    5 Exit:\t Well... it will exit...\n"
+
+read -p "Enter option number > "
+
+if [[ $REPLY =~ ^[0-6]$ ]]; then
+    case $REPLY in
+        1 )
             echo -e "\n"
             fullInstallTest 'test';
-            break;;
-        Backup ) 
+            echo -e "\n"
+            ;;
+        2 ) 
             echo -e "\n"
             onlyBackup;
             onlyBackup >> $log_file
-            break;;
-        Install ) 
+            echo -e "\n"
+            ;;
+        3 ) 
             echo -e "\n"
             fullInstall;
-            fullInstall >> $log_file            
-            break;;
-        Save)
+            fullInstall >> $log_file  
+            echo -e "\n"          
+            ;;
+        4)
+            echo -e "\n"
             saveToRepoOption
             saveToRepoOption >> $log_file
-            break;;
-        Exit ) exit;;
+            echo -e "\n"
+            ;;
+        5 ) break;;
+        0 ) break;;
     esac
+fi
 done
-
