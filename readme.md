@@ -1,8 +1,58 @@
 # Dotfiles
 
-This repository contains my personal dotfiles, which are configuration files for various software tools and applications. By keeping my dotfiles in a version control system like Git, I can easily synchronize and manage my configurations across different machines.
+This repository contains my personal dotfiles and some help on a fresh install.
+
+Softwares:
+
+- Wezterm
+- NeoVim
+- Tmux
+- Some bash scirpts
 
 ## Installation
+
+I usually setup my machines with the stuff listed below. You can find the stuff you'll need to install under `Only for dotfiles` section. The `Full system install` is only for me to set up new machines for everyday use.
+
+### Linux
+
+- Only for dotfiles: - `yay -S zsh-antidote` or `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote` - `pacman -S wezterm nvim tmux fzf mc zsh antidote`
+- Full system install: - `yay -S zsh-antidote bun` - `pacman -S`
+
+### Osx
+
+- Only dotfiles: - `brew install wezterm nvim tmux fzf mc zsh antidote`
+- Full system install: - `brew install
+antidote
+bun
+caffeine
+chromium
+composer
+curl
+deno
+docker
+firefox
+fzf
+gh
+git
+github
+google-chrome
+hiddenbar
+htop
+kubernetes-cli
+lua
+midnight-commander
+neovim
+ripgrep
+sevenzip
+slack
+spotify
+thefuck
+tmux
+visual-studio-code
+wezterm
+zoom`
+
+## Usage
 
 1. Clone this repository to your home folder:
 
@@ -17,17 +67,18 @@ This repository contains my personal dotfiles, which are configuration files for
    ```
 
 3. Run the installation script:
-   - Files with folders should go into the `.config` folder under your home directory.
-   - Files starting with `.` should go directly into your home directory.
-
-## Usage
-
-Feel free to explore and modify these dotfiles to suit your needs. Each file is named after the software or tool it configures, making it easy to find and customize specific settings.
+   - Run the script: `sh install.sh`
+   - It will DELETE and REPLACE the following folders:
+     - .config/bash
+     - .config/mc
+     - .config/nvim
+   - It will OVERWRITE the following dotfiles:
+     - .tmux.conf
+     - .wezterm.lua
+     - .zsh_plugins.txt
+     - .zshrc
+   - A log about the progress willbe created in theis folder named `install_progress_log.txt`.
 
 ## Contributing
 
-If you have any suggestions or improvements for my dotfiles, feel free to open an issue or submit a pull request. I appreciate any contributions that can help make my configurations even better!
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+If you have any sugestions just open a PR.
