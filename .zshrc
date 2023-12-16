@@ -13,8 +13,8 @@ compinit
 # now, simply add these two lines in your ~/.zshrc
 # source antidote
 
-# source /usr/share/zsh-antidote/antidote.zsh # Linux
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh # OSX
+source /usr/share/zsh-antidote/antidote.zsh # Linux
+# source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh # OSX
 
 autoload -Uz promptinit && promptinit && prompt default
 
