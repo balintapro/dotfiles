@@ -24,6 +24,8 @@ config.window_close_confirmation = 'NeverPrompt'
 config.color_scheme = 'Poimandres'
 config.default_prog = tmux
 
+config.freetype_load_target = "HorizontalLcd"
+
 -- Disable animations
 config.animation_fps = 1
 config.cursor_blink_ease_in = 'Constant'
@@ -37,9 +39,9 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.9
 
 config.font =
-    wezterm.font('Menlo', { weight = 'Medium' })
+    wezterm.font('Fira Code Mono', { weight = 'Medium' })
 
-config.font_size = 15
+config.font_size = 11
 
 config.colors = {
     selection_bg = highlight_bg,
