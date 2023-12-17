@@ -9,6 +9,8 @@ Softwares I usually setup my machines with:
 - Tmux
 - Some bash scirpts
 
+Note: If you would found the install.sh script useful consider a star for the repo, cheers!
+
 ## Installation
 
 You can find the tools and programs you'll need to install for my configuration to work under `Requirement` section.
