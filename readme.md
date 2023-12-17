@@ -11,6 +11,8 @@ Softwares I usually setup my machines with:
 
 Note: If you found the install.sh script useful consider a star for the repo, cheers!
 
+![preview](https://github.com/balintapro/dotfiles/tree/main/preview.png?raw=true "preview image")
+
 ## Installation
 
 You can find the tools and programs you'll need to install for my configuration to work under `Requirement` section.
@@ -21,7 +23,43 @@ The `Full system install` is for me to set up new machines with all the usual th
 - Requirements
   - Aur: `yay -S zsh-antidote` or `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote`
   - Pacman install: `pacman -S wezterm nvim tmux fzf mc zsh antidote`
-- Full system install: - `yay -S zsh-antidote bun` - `pacman -S`
+- Full system install: - `yay -S OR pacman -S 
+          adobe-source-sans-fonts
+          apple-fonts
+          blueman
+          bluez-utils
+          bun
+          composer
+          discord
+          firefox
+          fzf
+          gimp
+          github-cli
+          google-chrome
+          htop
+          mariadb
+          mc
+          neovim
+          npm
+          ntfs-3g
+          nvm
+          p7zip
+          php-apache
+          php-cgi
+          php-gd
+          powerline-fonts
+          rust
+          spotify-launcher
+          thefuck
+          ttf-fira-code
+          ttf-fira-mono
+          visual-studio-code-bin
+          vlc
+          wget
+          wireless_tools
+          yay
+          zsh-antidote
+`
 
 ### Osx
 
