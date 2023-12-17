@@ -1,7 +1,13 @@
 # This script is used to install dots and config files.
 # It deletes existing config folders from $HOME/.config, copies new config folders from $HOME/dots/.config to $HOME/.config,
 # and overwrites dots in the home directory with the ones from $HOME/dots, excluding certain files.
-# The progress of the installation is logged in the 'install_progress_log.txt' file.
+# The progress of the installation is logged in the 'install_progress.log' file.
+
+# Features: 
+# Test         Test backup, install, save functionalities. Nothing will be changed.
+# Backup       All matching user dots and configs backed up to $HOME/bak-dot.
+# Install      Install dots and configs to your home directory.
+# Save         Copy all matching user dots and configs to the repo.
 
 #!/bin/bash
 
