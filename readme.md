@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repository contains my personal dotfiles and some help on a fresh install.
+This repository contains my personal dotfiles, wallpapers and some notes for fresh installs.
 
 Softwares I usually setup my machines with:
 
@@ -11,7 +11,7 @@ Softwares I usually setup my machines with:
 
 Note: If you found the install.sh script useful consider a star for the repo, cheers!
 
-![preview](https://raw.githubusercontent.com/balintapro/dotfiles/main/preview.png)
+![preview](https://raw.githubusercontent.com/balintapro/dotfiles/main/img/preview.png)
 
 ## Installation
 
@@ -99,6 +99,8 @@ The `Full system install` is for me to set up new machines with all the usual th
 `
 
 ## Usage
+
+![install script](https://raw.githubusercontent.com/balintapro/dotfiles/main/img/install.png)
 
 1. Clone this repository to your home folder: `git clone https://github.com/balintapro/dotfiles.git`
 2. Change into the dotfiles directory `cd dotfiles`
