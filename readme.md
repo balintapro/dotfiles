@@ -9,7 +9,7 @@ Softwares I usually setup my machines with:
 - Tmux
 - Some bash scirpts
 
-Note: If you would found the install.sh script useful consider a star for the repo, cheers!
+Note: If you found the install.sh script useful consider a star for the repo, cheers!
 
 ## Installation
 
