@@ -11,7 +11,7 @@ Softwares I usually setup my machines with:
 
 Note: If you found the install.sh script useful consider a star for the repo, cheers!
 
-![preview](https://github.com/balintapro/dotfiles/tree/main/preview.png?raw=true "preview image")
+![preview](https://raw.githubusercontent.com/balintapro/dotfiles/main/preview.png)
 
 ## Installation
 
