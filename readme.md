@@ -63,17 +63,19 @@ The `Full system install` is for me to set up new machines with all the usual th
 1. Clone this repository to your home folder: `git clone https://github.com/balintapro/dotfiles.git`
 2. Change into the dotfiles directory `cd dotfiles`
 3. Run the installation script `sh install.sh`:
-   - It will BACKUP the folders and files it will modify to this folder `~/bak-dot/`
-   - It will DELETE and REPLACE the following folders:
-     - .config/bash
-     - .config/mc
-     - .config/nvim
-   - It will OVERWRITE the following dotfiles:
-     - .tmux.conf
-     - .wezterm.lua
-     - .zsh_plugins.txt
-     - .zshrc
-   - A log about the progress willbe created in theis folder named `install_progress.log`.
+    - TEST backup, install, save functionalities. Nothing will be changed.
+    - BACKUP the folders and files it will modify to this folder `~/bak-dot/`
+    - INSTALL will DELETE and REPLACE the following folders:
+      - .config/bash
+      - .config/mc
+      - .config/nvim
+    - INSTALL will OVERWRITE the following dotfiles:
+      - .tmux.conf
+      - .wezterm.lua
+      - .zsh_plugins.txt
+      - .zshrc
+    - SAVE will Copy all matching user dots and configs to the repo.
+    - After INSTALL, BACKUP, SAVE a log about the progress will be created in this folder named `install_progress.log`.
 
 ## Contributing
 
