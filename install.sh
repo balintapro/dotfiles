@@ -1,6 +1,7 @@
 # This script is used to install dots and config files.
-# It deletes existing config folders from $HOME/.config, copies new config folders from $HOME/dots/.config to $HOME/.config,
-# and overwrites dots in the home directory with the ones from $HOME/dots, excluding certain files.
+# It deletes existing config folders from ~/.config. Copies new config folders
+# from $REPO-LOCATION/dotfiles/config to ~/.config, and overwrites dots in the 
+# home directory with the ones from the repo, excluding certain files.
 # The progress of the installation is logged in the 'install_progress.log' file.
 
 # Features: 
