@@ -44,7 +44,7 @@ alias -g conf-bash="cd $HOME/.config/bash/ && nvim ."
 alias -g conf-zsh="nvim $HOME/.zshrc"
 alias -g conf-tmux="nvim $HOME/.tmux.conf"
 alias -g conf-wezterm="nvim $HOME/.wezterm.lua"
-alias -g notes="nvim $HOME/learn/notes.md"
+alias -g notes="nvim $HOME/.config/bash/notes.md"
 alias -g rmd="mdless '$(fzf)'"
 
 
