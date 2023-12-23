@@ -1,36 +1,51 @@
 return {
-    -- Theme
+    -- current color scheme
     {
-        'olivercederborg/poimandres.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('poimandres').setup {
-                bold_vert_split = false,          -- use bold vertical separators
-                dim_nc_background = true,         -- dim 'non-current' window backgrounds
-                disable_background = true,       -- disable background
-                disable_float_background = false, -- disable background for floats
-                disable_italics = false,          -- disable italics
-            }
-        end,
-        -- optionally set the colorscheme within lazy config
-        init = function()
-            vim.cmd("colorscheme poimandres")
-        end
-    },
+      "rose-pine/neovim",
+      name = "rose-pine",
+      priority = 1000,
+      config = function()
+        return {
+          require("rose-pine").setup({
+            variant = "main",
+            dark_variant = "main",
+  
+            disable_background = true,
+            -- disable_nc_background = true,
+            -- disable_float_background = true,
+  
+            disable_italics = true
 
-    -- Statusline
-    {
-        -- Set lualine as statusline
-        'nvim-lualine/lualine.nvim',
-        -- See `:help lualine.txt`
-        opts = {
-            options = {
-                icons_enabled = true,
-                theme = 'poimandres',
-                component_separators = '|',
-                section_separators = '',
-            }
+            -- groups = {
+            --   -- background = "pine", --"#133340", --"#255159",
+            --   -- panel = "surface",   -- "#133340",
+            --   border = "pine", --"pine",
+            -- },
+  
+            -- highlight_groups = {
+            --   -- blend colours against the 'base' background
+            --   ColorColumn = { bg = "pine", blend = 40 },
+            --   CursorLine = { bg = "pine", blend = 21 },
+  
+            --   Search = { bg = "rose", inherit = false },
+            --   FloatBorder = { bg = "none" },
+            --   LineNr = { fg = "#f6c177" }, -- gold
+  
+            --   -- nvim-cmp
+            --   -- winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None"
+            --   CmpPmenu = { bg = "#011b26" },
+            --   CmpSel = { bg = "pine" },
+            --   CmpDoc = { bg = "#011b26" },
+            -- },
+          }),
         }
-    }
-}
+      end,
+    },
+  
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "rose-pine",
+      },
+    },
+  }
