@@ -24,7 +24,7 @@ config.default_cursor_style = 'BlinkingBlock'
 config.force_reverse_video_cursor = true
 
 config.font =
-    wezterm.font('Hack', { weight = 'Regular' })
+    wezterm.font('Hack Nerd Font', { weight = 'Regular' })
 
 config.font_size = 11
 
