@@ -18,12 +18,15 @@ Note: If you found the install.sh script useful consider a star for the repo, ch
 You can find the tools and programs you'll need to install for my configuration to work under `Requirement` section.
 The `Full system install` is for me to set up new machines with all the usual things for everyday use.
 
+Font <https://github.com/source-foundry/Hack>
+Theme <https://github.com/rose-pine>
+
 ### Linux
 
 - Requirements
   - Aur: `yay -S zsh-antidote` or `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote`
   - Pacman install: `pacman -S wezterm nvim tmux fzf mc zsh antidote`
-- Full system install: - `yay -S OR pacman -S 
+- Full system install: - `yay -S OR pacman -S
           adobe-source-sans-fonts
           apple-fonts
           blueman
@@ -48,7 +51,8 @@ The `Full system install` is for me to set up new machines with all the usual th
           php-cgi
           php-gd
           powerline-fonts
-          rust
+          ruby-mdless
+          rustup
           spotify-launcher
           thefuck
           ttf-fira-code
@@ -85,6 +89,7 @@ The `Full system install` is for me to set up new machines with all the usual th
          htop
          kubernetes-cli
          lua
+         mdless
          midnight-commander
          neovim
          ripgrep
