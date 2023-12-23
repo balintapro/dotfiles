@@ -17,7 +17,7 @@ config.freetype_load_target = "HorizontalLcd"
 config.window_close_confirmation = 'NeverPrompt'
 config.hide_tab_bar_if_only_one_tab = true
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 config.color_scheme = 'rose-pine'
 
 config.default_cursor_style = 'BlinkingBlock'
