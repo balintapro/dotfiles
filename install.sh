@@ -126,12 +126,13 @@ overwriteConfigFiles () {
 # OPTION WRAPPER DECOR FUNCTIONS
 fullInstall () {
     echo "${Green}Dotfile installation started${Nc}\n$NOW\n"
+    echo "${Cyan}Find your backup in $BAK_DIR${Nc}"
     echo "--- --- ---"
     createBackup
     deleteFolders
     copyFolders
     overwriteConfigFiles
-    echo "${Red}\nDotfile installation COMPLETE${Nc}\n$NOW\n${Cyan}Find your backup in $BAK_DIR${Nc}"
+    echo "${Red}\nDotfile installation COMPLETE${Nc}\n$NOW"
 }
 
 fullInstallTest () {
