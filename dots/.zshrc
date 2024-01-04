@@ -11,8 +11,8 @@ compinit
 # End of lines added by compinstall
 
 # source antidote
-source /usr/share/zsh-antidote/antidote.zsh # Linux
-# source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh # OSX
+# source /usr/share/zsh-antidote/antidote.zsh # Linux
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh # OSX
 
 autoload -Uz promptinit && promptinit && prompt default
 
@@ -46,6 +46,7 @@ alias gmb="curl wttr.in/Gomba"
 alias tmux-sess="$HOME/.config/bash/tmux-sess"
 alias tmux-win="$HOME/.config/bash/tmux-win"
 
+alias -g conf-ala="cd $HOME/.config/alacritty/ && nvim ."
 alias -g conf-nvim="cd $HOME/.config/nvim/ && nvim ."
 alias -g conf-bash="cd $HOME/.config/bash/ && nvim ."
 alias -g conf-zsh="nvim $HOME/.zshrc"
@@ -64,9 +65,9 @@ alias -g gcm="git checkout master && git pull"
 alias -g gcmb="git checkout -b"
 alias -g gp="git pull"
 
-# alias -g sess="tmux neww tmux-sess"
-# alias -g go-mc="cd ~/work/mission-control/ && tmux-sess ~/work/mission-control/"
-# alias -g go-mc-review="cd ~/work/mission-control/ && tmux-sess ~/work/reviews/mission-control/"
-# alias -g go-nest="cd ~/work/nest-client/ && tmux-sess ~/work/nest-client/"
-# alias -g go-fe-apps="cd ~/work/frontend-apps/ && tmux-sess ~/work/frontend-apps/"
+alias -g sess="tmux neww tmux-sess"
+alias -g go-mc="cd ~/work/mission-control/ && tmux-sess ~/work/mission-control/"
+alias -g go-mc-review="cd ~/work/mission-control/ && tmux-sess ~/work/reviews/mission-control/"
+alias -g go-nest="cd ~/work/nest-client/ && tmux-sess ~/work/nest-client/"
+alias -g go-fe-apps="cd ~/work/frontend-apps/ && tmux-sess ~/work/frontend-apps/"
 
