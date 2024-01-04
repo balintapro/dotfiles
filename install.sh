@@ -11,11 +11,24 @@
 # INIT VARIABLES
 log_file=install_progress.log
 NOW=$(date +"%Z # %m-%d-%Y @ %H:%M:%S")
-
-BAK_DIR="$HOME/bak-dot"
+NOW_F=$(date +"%m-%d-%Y_%H-%M-%S")
+BAK_DIR="$HOME/bak-dot_${NOW_F}"
 BAK_CONFIG_DIR="$BAK_DIR/config"
 
 USR_CONFIG_DIR="$HOME/.config"
+
+# Reset
+Nc='\033[0m'       # Text Reset
+
+# Regular Colors
+Black='\033[0;30m'        # Black
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+Blue='\033[0;34m'         # Blue
+Purple='\033[0;35m'       # Purple
+Cyan='\033[0;36m'         # Cyan
+White='\033[0;37m'        # White
 
 getFolderNames() {
     folder_names=()
@@ -25,7 +38,7 @@ getFolderNames() {
             folder_names+=("$folder_name")
         fi
     done
-    echo -e "${folder_names[@]}"
+    echo "${folder_names[@]}"
 }
 
 getFileNames() {
@@ -36,7 +49,7 @@ getFileNames() {
             file_names+=("$file_name")
         fi
     done
-    echo -e "${file_names[@]}"
+    echo "${file_names[@]}"
 }
 
 REPO_DIR="$PWD"
@@ -54,31 +67,31 @@ createBackup () {
 
     for folder in "${REPO_CONFIG_FOLDERS[@]}"; do
         folder_path="$USR_CONFIG_DIR/$folder"
-        echo -e "bak | $folder_path\t to \t$BAK_CONFIG_DIR/$folder"
+        echo "bak | $folder_path\t to \t$BAK_CONFIG_DIR/$folder"
         [[ ! ${1} ]] && cp -r "$folder_path" "$BAK_CONFIG_DIR"
     done
     for files in "${REPO_DOT_FILES[@]}"; do
         file_path="$HOME/$files"
-        echo -e "bak | $file_path\t to \t$BAK_DIR/$files"
+        echo "bak | $file_path\t to \t$BAK_DIR/$files"
         [[ ! ${1} ]] && cp -r "$file_path" "$BAK_DIR"
     done
-    echo -e "--- --- ---"
+    echo "--- --- ---"
 }
 
 # Backup all configs and dots to the repo
 saveToRepo () {
     for folder in "${REPO_CONFIG_FOLDERS[@]}"; do
         folder_path="$USR_CONFIG_DIR/$folder"
-        echo -e "cp | $folder_path\t to \t$REPO_CONFIG_DIR/$folder"
+        echo "cp | $folder_path\t to \t$REPO_CONFIG_DIR/$folder"
         [[ ! ${1} ]] && cp -r "$folder_path" "$REPO_CONFIG_DIR"
 
     done
     for files in "${REPO_DOT_FILES[@]}"; do
         file_path="$HOME/$files"
-        echo -e "cp | $file_path\t to \t$REPO_DOT_DIR/$files"
+        echo "cp | $file_path\t to \t$REPO_DOT_DIR/$files"
         [[ ! ${1} ]] && cp -r "$file_path" "$REPO_DOT_DIR"
     done
-    echo -e "--- --- ---"
+    echo "--- --- ---"
 }
 
 # Delete folders
@@ -86,17 +99,17 @@ deleteFolders () {
     for folder in "${REPO_CONFIG_FOLDERS[@]}"; do
         folder_path="$USR_CONFIG_DIR/$folder"
         if [ -d "$folder_path" ]; then
-            echo -e "rm | $folder_path"
+            echo "rm | $folder_path"
             [[ ! ${1} ]] && rm -rf "$folder_path"
         fi
     done
-    echo -e "--- --- ---"
+    echo "--- --- ---"
 }
 
 # Copy folders
 copyFolders () {
     for folder in "${REPO_CONFIG_FOLDERS[@]}"; do
-        echo -e "cp | $REPO_CONFIG_DIR/$folder\t to \t$USR_CONFIG_DIR"
+        echo "cp | $REPO_CONFIG_DIR/$folder\t to \t$USR_CONFIG_DIR"
         [[ ! ${1} ]] && cp -r "$REPO_CONFIG_DIR/$folder" "$USR_CONFIG_DIR"
     done
 }
@@ -104,90 +117,90 @@ copyFolders () {
 # Copy dots
 overwriteConfigFiles () {
     for file in "${REPO_DOT_FILES[@]}"; do
-        echo -e "cp | $REPO_DOT_DIR/$file\t to \t$HOME/$file"
+        echo "cp | $REPO_DOT_DIR/$file\t to \t$HOME/$file"
         [[ ! ${1} ]] && cp -r "$REPO_DOT_DIR/$file" "$HOME/$file"
     done
-    echo -e "--- --- ---"
+    echo "--- --- ---"
 }
 
 # OPTION WRAPPER DECOR FUNCTIONS
 fullInstall () {
-    echo -e "Dotfile installation started\n$NOW\n"
-    echo -e "--- --- ---"
+    echo "${Green}Dotfile installation started${Nc}\n$NOW\n"
+    echo "--- --- ---"
     createBackup
     deleteFolders
     copyFolders
     overwriteConfigFiles
-    echo -e "\nDotfile installation COMPLETE\n$NOW\nFind your backup in $BAK_DIR"
+    echo "${Red}\nDotfile installation COMPLETE${Nc}\n$NOW\n${Cyan}Find your backup in $BAK_DIR${Nc}"
 }
 
 fullInstallTest () {
-    echo -e "START TEST RUN - NOTHING WILL BE CHANGED"
-    echo -e "DUMMY FULL INSTALL\n$NOW\n"
-    echo -e "--- --- ---"
+    echo "${Green}START TEST RUN${Nc} - NOTHING WILL BE CHANGED"
+    echo "${Cyan}DUMMY FULL INSTALL${Nc}\n$NOW\n"
+    echo "--- --- ---"
     createBackup $1
     deleteFolders $1
     copyFolders $1
     overwriteConfigFiles $1
-    echo -e "\nDotfile installation COMPLETE\n$NOW\nFind your backup in $BAK_DIR"
-    echo -e "\nDUMMY SAVE TO REPO\n$NOW\n"
+    echo "\n${Red}Dotfile installation COMPLETE${Nc}\n$NOW\n${Cyan}Find your backup in $BAK_DIR${Nc}"
+    echo "${Cyan}\nDUMMY SAVE TO REPO${Nc}\n$NOW\n"
     saveToRepo $1
-    echo -e "END TEST RUN"
+    echo "${Red}END TEST RUN${Nc}"
 }
 
 onlyBackup () {
-    echo -e "Backup started\n$NOW\n"
-    echo -e "--- --- ---"
+    echo "${Green}Backup started${Nc}\n$NOW\n"
+    echo "--- --- ---"
     createBackup
-    echo -e "\nBackup COMPLETE\n$NOW\nFind your backup in $BAK_DIR"
+    echo "${Red}\nBackup COMPLETE${Nc}\n$NOW\n${Cyan}Find your backup in $BAK_DIR${Nc}"
 }
 
 saveToRepoOption () {
-    echo -e "Save to repo started\n$NOW\n"
-    echo -e "--- --- ---"
+    echo "${Green}Save to repo started${Nc}\n$NOW\n"
+    echo "--- --- ---"
     saveToRepo
-    echo -e "\nSave to repo COMPLETE\n$NOW\nYour files in $REPO_DIR are now updated."
+    echo "${Red}\nSave to repo COMPLETE${Nc}\n$NOW\nYour files in $REPO_DIR are now updated."
 }
 
 
 while true; do
-echo -e "configs: \t ${REPO_CONFIG_FOLDERS[@]}
-dots: \t\t ${REPO_DOT_FILES[@]}
+echo "configs: \t ${Green}${REPO_CONFIG_FOLDERS[@]}${Nc}
+dots: \t\t ${Green}${REPO_DOT_FILES[@]}${Nc}
 Note: only files and folders listed in the repo will be backed up!\n"
 
-echo -e "Select an option from below:
-    1 Test:\t Test backup, install, save functionalities. Nothing will be changed.
-    2 Backup:\t All matching user dots and configs backed up to $HOME/bak-dot.
-    3 Install:\t Install dots and configs to your home directory.
-    4 Save:\t Copy all matching user dots and configs to the repo.
-    5 Exit:\t Well... it will exit...\n"
+echo "Select an option from below:
+    1 ${Green}Test:${Nc}\t Test backup, install, save functionalities. Nothing will be changed.
+    2 ${Green}Backup:${Nc}\t All matching user dots and configs backed up to $HOME/bak-dot.
+    3 ${Green}Install:${Nc}\t Install dots and configs to your home directory.
+    4 ${Green}Save:${Nc}\t Copy all matching user dots and configs to the repo.
+    5 ${Red}Exit:${Nc}\t Well... it will exit...\n"
 
 read -p "Enter option number > "
 
 if [[ $REPLY =~ ^[0-6]$ ]]; then
     case $REPLY in
         1 )
-            echo -e "\n"
+            echo "\n"
             fullInstallTest 'test';
-            echo -e "\n"
+            echo "\n"
             ;;
         2 ) 
-            echo -e "\n"
+            echo "\n"
             onlyBackup;
             onlyBackup >> $log_file
-            echo -e "\n"
+            echo "\n"
             ;;
         3 ) 
-            echo -e "\n"
+            echo "\n"
             fullInstall;
             fullInstall >> $log_file  
-            echo -e "\n"          
+            echo "\n"          
             ;;
         4)
-            echo -e "\n"
+            echo "\n"
             saveToRepoOption
             saveToRepoOption >> $log_file
-            echo -e "\n"
+            echo "\n"
             ;;
         5 ) break;;
         0 ) break;;
