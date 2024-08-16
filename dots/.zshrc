@@ -55,11 +55,13 @@ alias -g conf-wezterm="nvim $HOME/.wezterm.lua"
 alias -g notes="nvim $HOME/.config/bash/notes.md"
 alias -g rmd="mdless '$(fzf)'"
 
+eval "$(frontend completion)"
 
 alias -g ll="ls -al"
 alias -g vim="nvim"
 alias -g ys="yarn start"
 alias -g yi="yarn install"
+alias -g yt="yarn test"
 
 alias -g gcm="git checkout master && git pull"
 alias -g gcmb="git checkout -b"
@@ -71,3 +73,7 @@ alias -g go-mc-review="cd ~/work/mission-control/ && tmux-sess ~/work/reviews/mi
 alias -g go-nest="cd ~/work/nest-client/ && tmux-sess ~/work/nest-client/"
 alias -g go-fe-apps="cd ~/work/frontend-apps/ && tmux-sess ~/work/frontend-apps/"
 
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

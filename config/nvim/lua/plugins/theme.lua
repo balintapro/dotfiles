@@ -1,19 +1,20 @@
 return {
   -- current color scheme
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'olivercederborg/poimandres.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      local rosepine = require("rose-pine")
-      rosepine.setup({
-        variant = "main",
-        dark_variant = "main",
-        disable_background = true,
-        disable_italics = true
-      })
-      vim.cmd('colorscheme rose-pine')
+      require('poimandres').setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+
+    -- optionally set the colorscheme within lazy config
+    init = function()
+      vim.cmd("colorscheme poimandres")
     end
   },
   {
@@ -25,7 +26,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'rose-pine',
+        theme = 'poimandres',
         component_separators = '|',
         section_separators = '',
       }
