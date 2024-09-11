@@ -30,7 +30,7 @@ belak/zsh-utils path:completion
 #geometry-zsh/geometry
 #ChesterYue/ohmyzsh-theme-passion
 #Moarram/headline
-reobin/typewritten
+jackharrisonsherlock/common
 
 # popular fish-like plugins
 mattmc3/zfunctions

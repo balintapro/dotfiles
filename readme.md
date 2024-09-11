@@ -61,6 +61,7 @@ Theme <https://github.com/rose-pine>
           vlc
           wget
           wireless_tools
+          yarn
           yay
           zsh-antidote
 `
@@ -71,36 +72,54 @@ Theme <https://github.com/rose-pine>
   - `brew install wezterm nvim tmux fzf mc zsh antidote`
 - Full system install:
   - `brew install
-         antidote
-         bun
-         caffeine
-         chromium
-         composer
-         curl
-         deno
-         docker
-         firefox
-         fzf
-         gh
-         git
-         github
-         google-chrome
-         hiddenbar
-         htop
-         kubernetes-cli
-         lua
-         mdless
-         midnight-commander
-         neovim
-         ripgrep
-         sevenzip
-         slack
-         spotify
-         thefuck
-         tmux
-         visual-studio-code
-         wezterm
-         zoom
+        alacritty
+        antidote
+        ca-certificates
+        caffeine
+        chatgpt
+        choosy
+        chromium
+        diffutils
+        discord
+        firefox
+        font-hack-nerd-font
+        fzf
+        gettext
+        github
+        glib
+        libevent
+        libpng
+        libssh2
+        libuv
+        libvterm
+        lpeg
+        luajit
+        luv
+        midnight-commander
+        mpdecimal
+        msgpack
+        ncurses
+        neovim
+        nvm
+        openssl@3
+        pcre
+        pcre2
+        python@3.12
+        readline
+        s-lang
+        spotify
+        sqlite
+        thefuck
+        tmux
+        tree-sitter
+        unibilium
+        utf8proc
+        vault
+        visual-studio-code
+        xz
+        yacreader
+        yarn
+        zsh
 `
 
 ## Usage
@@ -123,6 +142,18 @@ Theme <https://github.com/rose-pine>
       - .zshrc
     - SAVE will Copy all matching user dots and configs to the repo.
     - After INSTALL, BACKUP, SAVE a log about the progress will be created in this folder named `install_progress.log`.
+
+## Tmux todo
+
+don't forget to install tpm
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+tmux source ~/.tmux.conf
+```
+
+Then Press prefix + I install plugins.
 
 ## Contributing
 

@@ -8,11 +8,11 @@ cursor = "CellForeground"
 
 [colors.search.matches]
 foreground = "0x1b1e28"
-background = "0xadd7ff"
+background = "0x89ddff"
 
 [colors.search.focused_match]
 foreground = "0x1b1e28"
-background = "0xadd7ff"
+background = "0x89ddff"
 
 [colors.selection]
 text = "CellForeground"
