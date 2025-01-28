@@ -8,11 +8,11 @@ cursor = "CellForeground"
 
 [colors.search.matches]
 foreground = "0x1b1e28"
-background = "0x89ddff"
+background = "0xadd7ff"
 
 [colors.search.focused_match]
 foreground = "0x1b1e28"
-background = "0x89ddff"
+background = "0xadd7ff"
 
 [colors.selection]
 text = "CellForeground"
@@ -27,8 +27,8 @@ black = "0x1b1e28"
 red = "0xd0679d"
 green = "0x5de4c7"
 yellow = "0xfffac2"
-blue = "0x89ddff"
-magenta = "0xfcc5e9"
+blue = "0x5de4c7"
+magenta = "0x89ddff"
 cyan = "0xadd7ff"
 white = "0xffffff"
 
